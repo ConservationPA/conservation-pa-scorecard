@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" crossorigin=""/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./js/vendor/leaflet.js" crossorigin=""></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
@@ -54,12 +55,15 @@
           <img src="images/conservationpa-logo.svg" alt="Conservation Voters of Pennsylvania">
 		</a>
       <div class="social-icons">
-            <a href="https://www.instagram.com/conservationvoterspa/" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
-                <a href="https://twitter.com/intent/tweet?text=I%20just%20checked%20my%20state%20legislators%27%20environmental%20scores%20on%20the%20Pennsylvania%20Environmental%20Scorecard%21%20Find%20out%20how%20your%20legislators%20match%20up%20with%20your%20environmental%20values%3A
-&url=https%3A%2F%2Fscorecard.conservationpa.org%2F" target="_blank">
-          <i class="fab fa-twitter-square fa-2x"></i></a>
-        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fscorecard.conservationpa.org&amp;t=Pennsylvania%20Environmental%20Scorecard" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
-      </div>
+        <a href="https://www.instagram.com/conservationvoterspa/"
+        target="_blank"><i class="fab fa-instagram-square fa-2x instagram"></i></a>
+     <a href="https://twitter.com/intent/tweet?text=I%20just%20checked%20my%20state%20legislators%27%20environmental%20scores%20on%20the%20Pennsylvania%20Environmental%20Scorecard%21%20Find%20out%20how%20your%20legislators%20match%20up%20with%20your%20environmental%20values%3A
+&url=https%3A%2F%2Fscorecard2024.conservationpa.org%2F"
+        target="_blank">
+       <i class="fab fa-x-twitter fa-2x twitter"></i></a>
+     <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fscorecard2024.conservationpa.org&amp;t=Pennsylvania%20Environmental%20Scorecard"
+        target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+     </div>
 		<h2>Pennsylvania Environmental Scorecard 2023-2024</h2>
 	</section>
 </header>
@@ -79,7 +83,7 @@
               <div class="col-12 col-md-6 d-flex justify-content-end">
                 <ul class="nav nav-pills">
                   <a class="text-sm-center nav-link active find_legislator"
-                     href="https://www.legis.state.pa.us/cfdocs/legis/home/findyourlegislator/" target="_blank">Find My Legislator</a> &nbsp; &nbsp;
+                     href="https://www.conservationpa.org/find" target="_blank">Find My Legislator</a> &nbsp; &nbsp;
                   <a class="text-sm-center nav-link active signup"
                      href="#signup">Signup</a>
                 </ul>
@@ -168,7 +172,6 @@
 <br />
                 <li><strong>Click a district</strong> to freeze the vote details panel.</li>
                 <li><strong>Click a bill number</strong> in the vote details panel to scroll down to see bill detail.</li>
-                <li><strong>Click any bill number</strong> in bill details to scroll back up.</li>
                 <li><strong>Click the 'x'</strong> (or <strong>press the 'Escape' key'</strong>) to dismiss the vote details panel and re-enable mouseover function.</li>
                 <li><strong>Zoom</strong> into selected district to see street detail.</li>
         <li><strong>Access the <a target="_blank" class= "pdflink" href="https://www.conservationpa.org/sites/default/files/2024-08/PA-Environmental-Scorecard-2023-2024.pdf"><i class="fas fa-file-pdf fa-2x"></i> PDF version</a></strong> of this scorecard.</li>
@@ -182,7 +185,7 @@
     {{#each priority_votes}}
     <div class="entry priority_vote" id="bookmark_{{bill_bookmark bill_number}}">
         <div class="body">
-      <h5><a href="#top"><span class="bill-bold">{{{bill_number}}}:</span> {{{bill_subtitle}}}</a></h5>
+      <h5><a href="{{{bill_url}}}" target="_blank" class="{{{bill_color}}}"><span class="bill-bold">{{{bill_number}}}:</span> {{{bill_subtitle}}}</a></h5>
             <p><em>{{{movement}}}</em></p>
       {{#if bill_date}}<p><em>{{{bill_date}}}</em></p>{{/if}}
             <p>{{{bill_description}}}</p>
@@ -219,22 +222,22 @@
             <ul class="fa-ul">
                 <li>{{#if_eq [HB 1032] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1032" target="_blank"><span class="bill-bold">HB 1032:</span> Solar for Schools Program</a></li>
+                    {{/if_eq}}<a href="#bookmark_1032"><span class="bill-bold">HB 1032:</span> Solar for Schools Program</a></li>
                 <li>{{#if_eq [HB 1842] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1842" target="_blank"><span class="bill-bold">HB 1842:</span> Community Solar</a></li>
+                    {{/if_eq}}<a href="#bookmark_1842"><span class="bill-bold">HB 1842:</span> Community Solar</a></li>
                 <li>{{#if_eq [HB 254] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=254" target="_blank"><span class="bill-bold">HB 254:</span> Lake Erie Wind Energy Development</a></li>
+                    {{/if_eq}}<a href="#bookmark_254"><span class="bill-bold">HB 254:</span> Lake Erie Wind Energy Development</a></li>
                 <li>{{#if_eq [HB 1615] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1615" target="_blank"><span class="bill-bold">HB 1615:</span> Appliance Energy Efficiency Standards</a></li>
+                    {{/if_eq}}<a href="#bookmark_1615"><span class="bill-bold">HB 1615:</span> Appliance Energy Efficiency Standards</a></li>
                 <li>{{#if_eq [HB 1474] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1474" target="_blank"><span class="bill-bold">HB 1474:</span> Electric Vehicle Infrastructure Funding</a></li>
+                    {{/if_eq}}<a href="#bookmark_1474"><span class="bill-bold">HB 1474:</span> Electric Vehicle Infrastructure Funding</a></li>
                 <li>{{#if_eq [HB 2338] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
                     {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>
-                    {{/if_eq}}<a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=2338" target="_blank"><span class="bill-bold">HB 2338:</span> PEDA Funding & Resources</a></li>
+                    {{/if_eq}}<a href="#bookmark_2338"><span class="bill-bold">HB 2338:</span> PEDA Funding & Resources</a></li>
             </ul>
 </div>
     </div>

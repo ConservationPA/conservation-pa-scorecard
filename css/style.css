@@ -75,16 +75,34 @@ li {
     margin: 0;
 }
 
-h5 a {
+h5 a.green {
     color: #075A0A;
+}
+
+h5 a.green:visited, h5 a.green:active, h5 a.green:hover {
+    color: #075A0A;
+}
+
+
+h5 a.red {
+    color: #ff0000;
+}
+
+
+h5 a.red:visited, h5 a.red:active, h5 a.red:hover {
+    color: #ff0000;
 }
 
 a:hover, a:active {
     text-decoration: none;
-    color: #075A0A !important;
+    color: #075A0A;
 }
 
-.child a:active, h5 a:visited, h5 a:active {
+.child a {
+    color: #075A0A;
+}
+
+.child a:active, .child a:hover {
     color: #075A0A;
 }
 
@@ -208,9 +226,6 @@ button#close.close {padding: 5px 9px 0;}
 
 }
 
-.child a, a {
-    color: #212529;
-}
 .child-header, .score  {
     font: 600 12pt 'Roboto', sans-serif;
     background-color: #f5f5f5; // #efefef; /*#e7e7e7;!* #0c0b3e;*/
@@ -366,3 +381,12 @@ span.score {
 .bill-bold {
     font-weight: bold;
 }
+
+.twitter, .instagram {
+    color: black;
+}
+
+.twitter:hover, .instagram:hover {
+    color: blue;
+}
+

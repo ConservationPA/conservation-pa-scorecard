@@ -12,6 +12,8 @@ let vote_context =  {
     "priority_votes": [
         {
             "bill_number": "HB 1032",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&sind=0&body=H&type=B&bn=1032",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Solar for Schools Program",
             "status": "Enacted",
@@ -21,6 +23,8 @@ let vote_context =  {
         },
         {
             "bill_number": "HB 1842",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1842",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Community Solar",
             "status": "Passed in the House (111-90)",
@@ -30,6 +34,8 @@ let vote_context =  {
         },
         {
             "bill_number": "HB 254",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=254",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Lake Erie Wind Energy Development",
             "status": "Passed in the House (102-99)",
@@ -39,6 +45,8 @@ let vote_context =  {
         },
         {
             "bill_number": "HB 1615",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1615",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Appliance Energy Efficiency Standards",
             "status": "Passed in the House (102-99)",
@@ -48,6 +56,8 @@ let vote_context =  {
         },
         {
             "bill_number": "HB 1474",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1474",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Electric Vehicle Infrastructure Funding",
             "status": "Passed in the House (102-100)",
@@ -57,6 +67,8 @@ let vote_context =  {
         },
         {
             "bill_number": "HB 2338",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=2338",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "PEDA Funding & Resources",
             "status": "Passed in the House (107-95)",

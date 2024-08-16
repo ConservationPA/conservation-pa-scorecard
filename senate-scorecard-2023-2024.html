@@ -33,8 +33,9 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="./js/vendor/leaflet.js"
           crossorigin=""></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.7/handlebars.js"
           integrity="sha256-3kxM38zABJY692X6ViIlt9FsBimhck0ZlsLtuA7R+0Y="
           crossorigin="anonymous"></script>
@@ -72,12 +73,12 @@
     </a>
     <div class="social-icons">
       <a href="https://www.instagram.com/conservationvoterspa/"
-         target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a>
+         target="_blank"><i class="fab fa-instagram-square fa-2x instagram"></i></a>
       <a href="https://twitter.com/intent/tweet?text=I%20just%20checked%20my%20state%20legislators%27%20environmental%20scores%20on%20the%20Pennsylvania%20Environmental%20Scorecard%21%20Find%20out%20how%20your%20legislators%20match%20up%20with%20your%20environmental%20values%3A
-&url=https%3A%2F%2Fscorecard.conservationpa.org%2F"
+&url=https%3A%2F%2Fscorecard2024.conservationpa.org%2F"
          target="_blank">
-        <i class="fab fa-twitter-square fa-2x"></i></a>
-      <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fscorecard.conservationpa.org&amp;t=Pennsylvania%20Environmental%20Scorecard"
+        <i class="fab fa-x-twitter fa-2x twitter"></i></a>
+      <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fscorecard2024.conservationpa.org&amp;t=Pennsylvania%20Environmental%20Scorecard"
          target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
     </div>
     <h2>Pennsylvania Environmental Scorecard 2023-2024</h2>
@@ -100,7 +101,7 @@
       <div class="col-12 col-md-6 d-flex justify-content-end">
         <ul class="nav nav-pills">
           <a class="text-sm-center nav-link active find_legislator"
-             href="https://www.legis.state.pa.us/cfdocs/legis/home/findyourlegislator/" target="_blank">Find My Legislator</a> &nbsp; &nbsp;
+             href="https://www.conservationpa.org/find" target="_blank">Find My Legislator</a> &nbsp; &nbsp;
           <a class="text-sm-center nav-link active signup"
              href="#signup">Signup</a>
         </ul>
@@ -214,7 +215,6 @@
 <br />
         <li><strong>Click a district</strong> to freeze the vote details panel.</li>
         <li><strong>Click a bill number</strong> in the vote details panel to scroll down to see bill detail.</li>
-        <li><strong>Click any bill number</strong> in bill details to scroll back up.</li>
         <li><strong>Click the 'x'</strong> (or <strong>press the 'Escape' key'</strong>) to dismiss the vote details panel and re-enable mouseover function.</li>
         <li><strong>Zoom</strong> into selected district to see street detail.</li>
         <li><strong>Access the <a target="_blank" class="pdflink" href="https://www.conservationpa.org/sites/default/files/2024-08/PA-Environmental-Scorecard-2023-2024.pdf"><i class="fas fa-file-pdf fa-2x"></i> PDF version</a></strong> of this scorecard.</li>
@@ -230,7 +230,7 @@
   <div class="entry priority_vote"
        id="bookmark_{{bill_bookmark bill_number}}">
     <div class="body">
-      <h5><a href="#top"><span class="bill-bold">{{{bill_number}}}:</span> {{{bill_subtitle}}}</a></h5>
+      <h5><a href="{{{bill_url}}}" target="_blank" class="{{{bill_color}}}"><span class="bill-bold">{{{bill_number}}}:</span> {{{bill_subtitle}}}</a></h5>
       <p><em>{{{movement}}}</em></p>
       {{#if bill_date}}<p><em>{{{bill_date}}}</em></p>{{/if}}
       <p>{{{bill_description}}}</p>
@@ -280,34 +280,34 @@
         <ul class="fa-ul">
           <li>{{#if_eq [HB 1032] "YAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1032" target="_blank"><span class="bill-bold">HB 1032:</span> Solar for Schools</a></li>
+              <a href="#bookmark_1032"><span class="bill-bold">HB 1032:</span> Solar for Schools</a></li>
           <li>{{#if_eq [SB 819] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=819" target="_blank"><span class="bill-bold">SB 819:</span> Critical Infrastructure (Ban on protesting fossil fuel buildout)</a></li>
+              <a href="#bookmark_819"><span class="bill-bold">SB 819:</span> Critical Infrastructure (Ban on protesting fossil fuel buildout)</a></li>
           <li>{{#if_eq [SB 831] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=831" target="_blank"><span class="bill-bold">SB 831:</span> Carbon Dioxide Geologic Sequestration Primacy Act</a></li>
+              <a href="#bookmark_831"><span class="bill-bold">SB 831:</span> Carbon Dioxide Geologic Sequestration Primacy Act</a></li>
           <li>{{#if_eq [SB 188] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=188" target="_blank"><span class="bill-bold">SB 188:</span> Regulatory Interference (Legislative Approval of Economically Significant Regulations)</a></li>
+              <a href="#bookmark_188"><span class="bill-bold">SB 188:</span> Regulatory Interference (Legislative Approval of Economically Significant Regulations)</a></li>
           <li>{{#if_eq [SB 190] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=190" target="_blank"><span class="bill-bold">SB 190:</span> Regulatory Interference (Automatic Three-Year Review of Economically Significant Regulations)</a></li>
+              <a href="#bookmark_190"><span class="bill-bold">SB 190:</span> Regulatory Interference (Automatic Three-Year Review of Economically Significant Regulations)</a></li>
           <li>{{#if_eq [SB 350] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=350" target="_blank"><span class="bill-bold">SB 350:</span> Regulatory Interference (Transparency in Permitting)</a></li>
+              <a href="#bookmark_350"><span class="bill-bold">SB 350:</span> Regulatory Interference (Transparency in Permitting)</a></li>
           <li>{{#if_eq [SB 144] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=144" target="_blank"><span class="bill-bold">SB 144:</span> Restricting PFAS Chemicals from Firefighting Foam</a></li>
+              <a href="#bookmark_144"><span class="bill-bold">SB 144:</span> Restricting PFAS Chemicals from Firefighting Foam</a></li>
           <li>{{#if_eq [SB 832] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=S&type=B&bn=832" target="_blank"><span class="bill-bold">SB 832:</span> Independent Energy Office</a></li>
+              <a href="#bookmark_832"><span class="bill-bold">SB 832:</span> Independent Energy Office</a></li>
           <li>{{#if_eq [SB 143] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=143" target="_blank"><span class="bill-bold">SB 143:</span> Energy Choice (Ban on banning utility service based on its energy source)</a></li>
+              <a href="#bookmark_143"><span class="bill-bold">SB 143:</span> Energy Choice (Ban on banning utility service based on its energy source)</a></li>
           <li>{{#if_eq [SB 1] "NAY"}}<i class="fa-li fas fa-leaf fa-2x"></i>
             {{else}}<i class="fa-li fas fa-exclamation-triangle fa-2x"></i>{{/if_eq}}
-                        <a href="https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=1" target="_blank"><span class="bill-bold">SB 1:</span> Constitutional Amendments (Voter ID)</a></li>
+              <a href="#bookmark_1"><span class="bill-bold">SB 1:</span> Constitutional Amendments (Voter ID)</a></li>
         </ul>
       </div>
     </div>

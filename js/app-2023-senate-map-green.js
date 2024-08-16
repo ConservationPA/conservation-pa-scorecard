@@ -11,6 +11,8 @@ let vote_context =  {
     "priority_votes": [
         {
             "bill_number": "HB 1032",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&sind=0&body=H&type=B&bn=1032",
+            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Solar for Schools Program",
             "status": "Signed by the Governor",
@@ -20,6 +22,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 819",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=819",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Ban on protesting fossil fuel buildout",
             "status": "Passed in the Senate (32-18)",
@@ -29,6 +33,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 831",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=831",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Carbon capture infrastructure buildout ",
             "status": "Enacted",
@@ -38,6 +44,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 188",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=188",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Concurrent resolution requirement for \"economically significant\" regulations",
             "status": "Passed in the Senate (28-21)",
@@ -47,6 +55,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 190",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=190",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Three year review of \"economically significant\" regulations",
             "status": "Passed in the Senate (28-21)",
@@ -56,6 +66,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 350",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=350",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Third party permitting ",
             "status": "Passed in the Senate (29-19)",
@@ -65,6 +77,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 144",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=144",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Weakened PFAS standards",
             "status": "Passed in the Senate (36-14)",
@@ -74,6 +88,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 832",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billInfo/billInfo.cfm?sYear=2023&sInd=0&body=S&type=B&bn=832",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Independent Energy Office",
             "status": "Passed in the Senate (28-22)",
@@ -83,6 +99,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 143",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=143",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Ban on municipal ability to incentivize renewable energy use",
             "status": "Passed in the Senate (40-9)",
@@ -92,6 +110,8 @@ let vote_context =  {
         },
         {
             "bill_number": "SB 1",
+            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=S&type=B&bn=1",
+            "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Restrictive Voter ID requirements",
             "status": "Passed in the Senate (28-20)",
