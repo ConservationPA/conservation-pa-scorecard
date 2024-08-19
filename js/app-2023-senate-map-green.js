@@ -37,9 +37,9 @@ let vote_context =  {
             "bill_color": "red",
             "stance": "No",
             "bill_subtitle": "Carbon capture infrastructure buildout ",
-            "status": "Enacted",
-            "bill_date": "TBD",
-            "movement": "Signed by the Governor",
+            "status": "Signed by the Governor",
+            "bill_date": "7/17/24",
+            "movement": "",
             "bill_description": "This bill intends to make it easier for companies engaging in carbon capture and sequestration to do business in Pennsylvania, but places the public and landowners at significant risk. It brazenly passes liability for underground CO2 storage to taxpayers, seemingly forever, once underground injections cease."
         },
         {
