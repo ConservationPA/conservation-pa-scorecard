@@ -18,7 +18,9 @@ let vote_context =  {
             "status": "Signed by the Governor",
             "bill_date": "7/17/24",
             "movement": "",
-            "bill_description": "Creates the \"Solar for Schools Grant Program.\" This will allow school districts, community colleges, and career technical schools to install solar technology on their rooftops and properties to reduce their energy costs and carbon emissions, with targeted federal investments in envrionmental justice communities"
+            "bill_description": "Creates the \"Solar for Schools Grant Program.\" This will allow school districts, community colleges, and career technical schools to install solar technology on their rooftops and properties to reduce their energy costs and carbon emissions, with targeted federal investments in envrionmental justice communities",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
+            "bill_desc_line_2": "Passed in the House (134-69), Passed in the Senate (42-7). Passed in the House on concurrence (112-90)"
         },
         {
             "bill_number": "SB 819",
@@ -29,7 +31,9 @@ let vote_context =  {
             "status": "Passed in the Senate (32-18)",
             "bill_date": "4/9/24",
             "movement": "Final Passage",
-            "bill_description": "Under the guise of protecting the power grid, this bill will have a chilling effect on the public\u2019s right to free speech and assembly. It creates felony penalties if someone trespasses on critical infrastructure facility properties with the \"intent\" to vandalize it, which creates a legal grey area that could lead to the imprisonment of someone for simply standing along a roadside or near a gate for \"impeding\" operations."
+            "bill_description": "Under the guise of protecting the power grid, this bill will have a chilling effect on the public\u2019s right to free speech and assembly. It creates felony penalties if someone trespasses on critical infrastructure facility properties with the \"intent\" to vandalize it, which creates a legal grey area that could lead to the imprisonment of someone for simply standing along a roadside or near a gate for \"impeding\" operations.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (32-18), Awaiting action in the House."
         },
         {
             "bill_number": "SB 831",
@@ -40,7 +44,9 @@ let vote_context =  {
             "status": "Signed by the Governor",
             "bill_date": "7/17/24",
             "movement": "",
-            "bill_description": "This bill intends to make it easier for companies engaging in carbon capture and sequestration to do business in Pennsylvania, but places the public and landowners at significant risk. It brazenly passes liability for underground CO2 storage to taxpayers, seemingly forever, once underground injections cease."
+            "bill_description": "This bill intends to make it easier for companies engaging in carbon capture and sequestration to do business in Pennsylvania, but places the public and landowners at significant risk. It brazenly passes liability for underground CO2 storage to taxpayers, seemingly forever, once underground injections cease.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (30-20), Passed in the House (127-75) Passed in the Senate on Concurrence (37-12)"
         },
         {
             "bill_number": "SB 188",
@@ -51,7 +57,9 @@ let vote_context =  {
             "status": "Passed in the Senate (28-21)",
             "bill_date": "5/9/23",
             "movement": "Final Passage",
-            "bill_description": "Requires the General Assembly to pass a concurrent resolution to approve any final-form rulemaking deemed \u201ceconomically significant\u201d before it can be implemented. If one or both chambers failed to act, the final regulation would be deemed not approved and would not be implemented, potentially halting significant environmental legislation needed to protect vulnerable communities."
+            "bill_description": "Requires the General Assembly to pass a concurrent resolution to approve any final-form rulemaking deemed \u201ceconomically significant\u201d before it can be implemented. If one or both chambers failed to act, the final regulation would be deemed not approved and would not be implemented, potentially halting significant environmental legislation needed to protect vulnerable communities.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (28-21), Awaiting action in the House.  "
         },
         {
             "bill_number": "SB 190",
@@ -62,7 +70,9 @@ let vote_context =  {
             "status": "Passed in the Senate (28-21)",
             "bill_date": "5/9/23",
             "movement": "Final Passage",
-            "bill_description": "Creates extraneous layers of bureaucracy that would place considerable time and capacity strains on agencies and the Independent Regulatory Review Commission without any new funding or support."
+            "bill_description": "Creates extraneous layers of bureaucracy that would place considerable time and capacity strains on agencies and the Independent Regulatory Review Commission without any new funding or support.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (28-21), Awaiting action in the House."
         },
         {
             "bill_number": "SB 350",
@@ -73,7 +83,9 @@ let vote_context =  {
             "status": "Passed in the Senate (29-19)",
             "bill_date": "5/10/23",
             "movement": "Final Passage",
-            "bill_description": "Provides for third party permitting which will force agencies to allow private companies to make permitting decisions without clear oversight."
+            "bill_description": "Provides for third party permitting which will force agencies to allow private companies to make permitting decisions without clear oversight.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (29-19), Awaiting action in the House."
         },
         {
             "bill_number": "SB 144",
@@ -84,7 +96,9 @@ let vote_context =  {
             "status": "Passed in the Senate (36-14)",
             "bill_date": "3/7/23",
             "movement": "Final Passage",
-            "bill_description": "By only limiting, rather than ending, the use of PFAS in firefighting foam, this bill will continue to put Pennsylvania\u2019s communities and firefighters at risk of exposure and contamination."
+            "bill_description": "By only limiting, rather than ending, the use of PFAS in firefighting foam, this bill will continue to put Pennsylvania\u2019s communities and firefighters at risk of exposure and contamination.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (36-14), Awaiting action in the House."
         },
         {
             "bill_number": "SB 832",
@@ -95,7 +109,9 @@ let vote_context =  {
             "status": "Passed in the Senate (28-22)",
             "bill_date": "5/1/24",
             "movement": "Final Passage",
-            "bill_description": "The DEP already has an Energy Programs Office, making this legislation extraneous. Additionally, it contains provisions that could put hundreds of millions of dollars of federal funding at risk."
+            "bill_description": "The DEP already has an Energy Programs Office, making this legislation extraneous. Additionally, it contains provisions that could put hundreds of millions of dollars of federal funding at risk.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (28-22), Awaiting action in the House. "
         },
         {
             "bill_number": "SB 143",
@@ -106,7 +122,9 @@ let vote_context =  {
             "status": "Passed in the Senate (40-9)",
             "bill_date": "3/8/23",
             "movement": "Final Passage",
-            "bill_description": "Takes away communities' ability to incentivize the use of renewable energy or limit fossil fuel use in residential properties."
+            "bill_description": "Takes away communities' ability to incentivize the use of renewable energy or limit fossil fuel use in residential properties.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (40-9), Awaiting action in the House."
         },
         {
             "bill_number": "SB 1",
@@ -117,7 +135,9 @@ let vote_context =  {
             "status": "Passed in the Senate (28-20)",
             "bill_date": "5/22/23",
             "movement": "Final Passage",
-            "bill_description": "Harasses and disenfranchises voters by requiring \u2018valid identification,\u2019 which will disproportionately harm elderly and minority voters, robbing them of their constitutional right to vote."
+            "bill_description": "Harasses and disenfranchises voters by requiring \u2018valid identification,\u2019 which will disproportionately harm elderly and minority voters, robbing them of their constitutional right to vote.",
+            "bill_desc_line_1": "The Pro-Environment Vote is \u201cNO\u201d.",
+            "bill_desc_line_2": "Passed in the Senate (28-20), Awaiting action in the House. "
         }
     ]
 };
