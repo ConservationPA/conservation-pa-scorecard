@@ -1,0 +1,232 @@
+{
+  "session": "2025-2026",
+  "house": [
+    {
+      "num": "HB 1261",
+      "title": "PFAS Firefighting Foam Ban",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1261",
+      "pro": "yay",
+      "color": "green",
+      "description": "Prohibits the use of PFAS-laden firefighting foam beginning in 2026, and directs Fire Commissioner and DEP to work together to assist fire companies with disposal. Requires warning label for all firefighting PPE containing PFAS.",
+      "status": "Passed in the House (202-0), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 1396",
+      "title": "Election Reform",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1396",
+      "pro": "yay",
+      "color": "green",
+      "description": "Helps to modernize our election system, while also maintaining the security measures that keep elections safe. Includes provisions like pre-canvassing, expanding access to mail-in voting and machine-based early voting, and reforming recount rules.",
+      "status": "Passed in the House (102-101), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 504",
+      "title": "Community Energy",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb0504",
+      "pro": "yay",
+      "color": "green",
+      "description": "Enables community energy projects and will expand Pennsylvania’s energy portfolio by allowing multiple customers within a certain geographic area to receive their energy from an off-site solar array or anaerobic digestor. This is especially beneficial to low-income homeowners and renters who otherwise would not be able to install alternative sources of energy on their property.",
+      "status": "Passed in the House (114-89), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 1599",
+      "title": "PJM Transparency",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1599",
+      "pro": "yay",
+      "color": "green",
+      "description": "Requires an electric utility company within PJM to disclose any recorded vote they make and provide a description on how that vote was in the public interest.",
+      "status": "Passed in the House (159-43), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 1364",
+      "title": "Investing in Mass Transit",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1364",
+      "pro": "yay",
+      "color": "green",
+      "description": "Invests nearly $300 million into public transportation agencies across Pennsylvania.",
+      "status": "Passed in the House (107-96), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 505",
+      "title": "Act 129 Reform",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb0505",
+      "pro": "yay",
+      "color": "green",
+      "description": "Reforms Pennsylvania's flagship energy efficiency and conservation program to make it more accessible for low-income ratepayers and help industries further reduce energy consumption.",
+      "status": "Passed in the House (102-101), Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 416",
+      "title": "Anti-RGGI Fiscal Code",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb0416",
+      "pro": "nay",
+      "color": "red",
+      "description": "Prohibits Pennsylvania from entering the Regional Greenhouse Gas Initiative (RGGI), which is the most consequential climate program in our Commonwealth's history.",
+      "status": "Passed in the House (189-14), Passed in the Senate (43-6). Signed into law by the Governor ."
+    },
+    {
+      "num": "HB 1556",
+      "title": "Advanced Clean Manufacturing Tax Credit",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1556",
+      "pro": "yay",
+      "color": "green",
+      "description": "Establishes a tax credit to promote in-state production of clean manufacturing products.",
+      "status": "Passed in the House (104-93), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 1260",
+      "title": "Solar-Ready Warehouses",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1260",
+      "pro": "yay",
+      "color": "green",
+      "description": "Requires all new warehouse facilities built in Pennsylvania to have 40% of their roof be structurally compatible for solar panels.",
+      "status": "Passed in the House (101-98). Awaiting action in the Senate."
+    },
+    {
+      "num": "HB 1834",
+      "title": "Data Center Act",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb1834",
+      "pro": "yay",
+      "color": "green",
+      "description": "Requires data centers in Pennsylvania to source a portion of their power from renewable energy and contribute to ratepayer assistance programs.",
+      "status": "Passed in the House (104-95), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2151",
+      "title": "Model Data Center Ordinance",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2151",
+      "pro": "yay",
+      "color": "green",
+      "description": "Creates a model ordinance municiplaities can use to set standards for data center development and operations.",
+      "status": "Passed in House (133-68), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2333",
+      "title": "Pro-Environment Chapter 14 Reauthorization",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2333",
+      "pro": "yay",
+      "color": "green",
+      "description": "Bolsters protections for ratepayers and implements a summer moratorium on utility shutoffs for low-income households.",
+      "status": "Passed in the House (107-94), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2246",
+      "title": "Water Usage Reporting Requirements for Data Centers",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2246",
+      "pro": "yay",
+      "color": "green",
+      "description": "Requires data centers to report substantial water usage to DEP to accurately track how much water each facility consumes.",
+      "status": "Passed in the House (116-84), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2076",
+      "title": "Advancing Geothermal Energy Deployment",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2076",
+      "pro": "yay",
+      "color": "green",
+      "description": "Establishes a regulatory framework for the construction of geothermal energy facilities in Pennsylvania.",
+      "status": "Passed in the House (118-83), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2302",
+      "title": "Licensing for Water Well Drillers",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2302",
+      "pro": "yay",
+      "color": "green",
+      "description": "Establishes licensing requirements for companies that are drilling new water wells in Pennsylvania.",
+      "status": "Passed in the House (114-87), awaiting action in the Senate."
+    },
+    {
+      "num": "HB 2145",
+      "title": "PFAS in Consumer Products",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb2145",
+      "pro": "yay",
+      "color": "green",
+      "description": "Bans the sale of certain consumer products in Pennsylvania that contain PFAS.",
+      "status": "Passed in the House (188-13), awaiting action in the Senate."
+    }
+  ],
+  "senate": [
+    {
+      "num": "SB 154",
+      "title": "Anti-Environment Chapter 14 Reauthorization",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0154",
+      "pro": "nay",
+      "color": "red",
+      "description": "Reauthorizes Chapter 14 without critical protections for low and moderate income ratepayers.",
+      "status": "Passed in Senate (41-7), Awaiting action in the House."
+    },
+    {
+      "num": "SB 186",
+      "title": "RGGI Abrogation",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0186",
+      "pro": "nay",
+      "color": "red",
+      "description": "Prevents Pennsylvania from entering the Regional Greenhouse Gas Initiative (RGGI), or enacting any sort of cap-and-invest carbon regulation to reduce harmful emissions.",
+      "status": "Passed in the Senate (31-18), Awaiting action in the House."
+    },
+    {
+      "num": "SB 187",
+      "title": "Independent Energy Office",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0187",
+      "pro": "nay",
+      "color": "red",
+      "description": "Establishes a duplicative and politicized Independent Energy Office and contains provisions that could put hundreds of millions of dollars of alternative fuels funding at risk.",
+      "status": "Passed in the Senate (27-21), Awaiting action in the House."
+    },
+    {
+      "num": "SB 311",
+      "title": "Anti-Renewables Energy Choice",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0311",
+      "pro": "nay",
+      "color": "red",
+      "description": "Takes away communities' ability to incentivize the use of renewable energy or limit fossil fuel use in residential properties.",
+      "status": "Passed in the Senate (34-15), Awaiting action in the House."
+    },
+    {
+      "num": "SB 333",
+      "title": "REINS Act",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0333",
+      "pro": "nay",
+      "color": "red",
+      "description": "Requires the General Assembly to pass a concurrent resolution to approve any final-form rulemaking deemed \"economically significant\" before it can be implemented. If one or both chambers failed to act, the final regulation would be deemed not approved and would not be implemented, potentially halting significant environmental legislation needed to protect at-risk communities.",
+      "status": "Passed in the Senate (27-23), Awaiting action in the House."
+    },
+    {
+      "num": "SB 1236",
+      "title": "Weakening the Clean Streams Law",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb1236",
+      "pro": "nay",
+      "color": "red",
+      "description": "Waives requirements for a National Pollutant Discharge Elimination System permit, allowing for companies to bypass environmental protections for waterways.",
+      "status": "Passed in the Senate (30-20), Awaiting action in the House."
+    },
+    {
+      "num": "SB 444",
+      "title": "Automatic Three-Year Review of \"Economically Significant\" Regulations",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0444",
+      "pro": "nay",
+      "color": "red",
+      "description": "Creates extraneous layers of bureaucracy that would place considerable time and capacity strains on agencies and the Independent Regulatory Review Commission without any new funding or support.",
+      "status": "Passed in the Senate (27-23), Awaiting action in the House."
+    },
+    {
+      "num": "SB 6",
+      "title": "Transparency in Permitting",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb0006",
+      "pro": "nay",
+      "color": "red",
+      "description": "Provides for third party permitting which will force agencies to allow private companies to make permitting decisions without clear oversight.",
+      "status": "Passed in the Senate (28-22). Awaiting action in the House."
+    },
+    {
+      "num": "HB 416",
+      "title": "Anti-RGGI Fiscal Code",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb0416",
+      "pro": "nay",
+      "color": "red",
+      "description": "Prohibits Pennsylvania from entering the Regional Greenhouse Gas Initiative (RGGI), which is the most consequential climate program in our Commonwealth's history.",
+      "status": "Passed in the House (189-14), Passed in the Senate (43-6). Signed into law by the Governor."
+    }
+  ]
+}

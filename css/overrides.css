@@ -329,3 +329,17 @@ span.nobr { white-space: nowrap; }
 .modal-backdrop.show {
   opacity: .7 !important;
 }
+
+/* Bill titles in "Our Scorecard Votes": green for bills we want passed, red for
+   bills we want defeated. Colours are set per-bill from the workbook's
+   "Color for Bill Title" column. Both clear WCAG AA on the #f7f7f7 panel. */
+.entry.priority_vote h5 a.bill-title-green,
+.entry.priority_vote h5 a.bill-title-green:hover {
+    color: #2E7A05;
+}
+
+.entry.priority_vote h5 a.bill-title-red,
+.entry.priority_vote h5 a.bill-title-red:hover {
+    color: #C1121F;
+}
+

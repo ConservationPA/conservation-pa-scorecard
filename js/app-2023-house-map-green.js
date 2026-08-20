@@ -12,81 +12,57 @@ let vote_context =  {
     "priority_votes": [
         {
             "bill_number": "HB 1032",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&sind=0&body=H&type=B&bn=1032",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Solar for Schools Program",
             "status": "Enacted",
             "bill_date": "7/17/24",
             "movement": "Signed by the Governor",
-            "bill_description": "Creates the \"Solar for Schools Grant Program.\" This will allow school districts, community colleges, and career technical schools to install solar technology on their rooftops and properties to reduce their energy costs and carbon emissions, with targeted federal investments in environmental justice communities",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (134-69), Passed in the Senate (42-7). Passed in the House on concurrence (112-90)"
+            "bill_description": "Creates the \"Solar for Schools Grant Program.\" This will allow school districts, community colleges, and career technical schools to install solar technology on their rooftops and properties to reduce their energy costs and carbon emissions, with targeted federal investments in environmental justice communities"
         },
         {
             "bill_number": "HB 1842",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1842",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Community Solar",
             "status": "Passed in the House (111-90)",
             "bill_date": "3/26/2024",
             "movement": "Final Passage",
-            "bill_description": "Enables community solar and will expand Pennsylvania\u2019s energy portfolio by allowing multiple customers within a certain geographic area to receive their energy from an off-site solar array. This is especially beneficial to low-income homeowners and renters who otherwise would not be able to install solar panels on their property.",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (111-90), Awaiting action in the Senate."
+            "bill_description": "Enables community solar and will expand Pennsylvania\u2019s energy portfolio by allowing multiple customers within a certain geographic area to receive their energy from an off-site solar array. This is especially beneficial to low-income homeowners and renters who otherwise would not be able to install solar panels on their property."
         },
         {
             "bill_number": "HB 254",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=254",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Lake Erie Wind Energy Development",
             "status": "Passed in the House (102-99)",
             "bill_date": "4/16/24",
             "movement": "Final Passage",
-            "bill_description": "Allows certain areas of Lake Erie to be leased for wind energy technology, which will produce more than 500 megawatts of power, and contains provisions that will not disrupt maritime activities or local ecosystems.",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (102-99), Awaiting action in the Senate."
+            "bill_description": "Allows certain areas of Lake Erie to be leased for wind energy technology, which will produce more than 500 megawatts of power, and contains provisions that will not disrupt maritime activities or local ecosystems."
         },
         {
             "bill_number": "HB 1615",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1615",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Appliance Energy Efficiency Standards",
             "status": "Passed in the House (102-99)",
             "bill_date": "5/7/24",
             "movement": "Final Passage",
-            "bill_description": "Sets energy efficiency and water conservation standards for certain commercial and residential appliances sold in Pennsylvania, which will help reduce pollution, conserve water, and reduce utility costs for businesses and consumers.",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (102-99), Awaiting action in the Senate. "
+            "bill_description": "Sets energy efficiency and water conservation standards for certain commercial and residential appliances sold in Pennsylvania, which will help reduce pollution, conserve water, and reduce utility costs for businesses and consumers."
         },
         {
             "bill_number": "HB 1474",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=1474",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "Electric Vehicle Infrastructure Funding",
             "status": "Passed in the House (102-100)",
             "bill_date": "10/30/23",
             "movement": "Final Passage",
-            "bill_description": "Supports the buildout of the infrastructure needed to support widespread electric vehicle adoption by adding electric vehicle charging infrastructure as an eligible project type under the Pennsylvania Property-Assessed Clean Energy Program, which will help agricultural, commercial, and industrial properties afford these projects.",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (102-100), Awaiting action in the Senate. "
+            "bill_description": "Supports the buildout of the infrastructure needed to support widespread electric vehicle adoption by adding electric vehicle charging infrastructure as an eligible project type under the Pennsylvania Property-Assessed Clean Energy Program, which will help agricultural, commercial, and industrial properties afford these projects."
         },
         {
             "bill_number": "HB 2338",
-            "bill_url": "https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2023&body=H&type=B&bn=2338",
-            "bill_color": "green",
             "stance": "Yes",
             "bill_subtitle": "PEDA Funding & Resources",
             "status": "Passed in the House (107-95)",
             "bill_date": "6/25/24",
             "movement": "Final Passage",
-            "bill_description": "Helps the Pennsylvania Energy Development Authority (PEDA) acquire the resources and regulatory framework necessary to distribute low-cost financing and technical assistance for clean energy projects to communities and organizations across the Commonwealth.",
-            "bill_desc_line_1": "The Pro-Environment Vote is \u201cYES\u201d.",
-            "bill_desc_line_2": "Passed in the House (107-95), Awaiting action in the Senate."
+            "bill_description": "Helps the Pennsylvania Energy Development Authority (PEDA) acquire the resources and regulatory framework necessary to distribute low-cost financing and technical assistance for clean energy projects to communities and organizations across the Commonwealth."
         }
     ]
 };

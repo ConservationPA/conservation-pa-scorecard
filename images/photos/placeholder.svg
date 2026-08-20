@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" role="img" aria-label="Photo not available">
+  <rect width="300" height="360" fill="#e9ecef"/>
+  <circle cx="150" cy="140" r="58" fill="#c3cad1"/>
+  <path d="M150 214c-56 0-101 34-101 76v70h202v-70c0-42-45-76-101-76z" fill="#c3cad1"/>
+  <text x="150" y="336" text-anchor="middle" font-family="'Roboto Condensed',Arial,sans-serif" font-size="20" fill="#6c757d">Photo not available</text>
+</svg>

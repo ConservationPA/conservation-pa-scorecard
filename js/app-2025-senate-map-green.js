@@ -7,101 +7,109 @@ let freeze = 0;
 let $sidebar = $("#sidebar");
 let clickedMemberNumber;
 
-let vote_context =  {
+let vote_context = {
     "priority_votes": [
         {
-            "bill_number": "HB 1032",
-            "stance": "Yes",
-            "bill_subtitle": "Solar for Schools Program",
-            "status": "Signed by the Governor",
-            "bill_date": "7/17/24",
+            "bill_number": "SB 154",
+            "stance": "No",
+            "bill_subtitle": "Anti-Environment Chapter 14 Reauthorization",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0154",
+            "status": "Passed in Senate (41-7), Awaiting action in the House.",
+            "bill_date": "",
             "movement": "",
-            "bill_description": "Creates the \"Solar for Schools Grant Program.\" This will allow school districts, community colleges, and career technical schools to install solar technology on their rooftops and properties to reduce their energy costs and carbon emissions, with targeted federal investments in envrionmental justice communities"
+            "bill_description": "Reauthorizes Chapter 14 without critical protections for low and moderate income ratepayers."
         },
         {
-            "bill_number": "SB 819",
+            "bill_number": "SB 186",
             "stance": "No",
-            "bill_subtitle": "Ban on protesting fossil fuel buildout",
-            "status": "Passed in the Senate (32-18)",
-            "bill_date": "4/9/24",
-            "movement": "Final Passage",
-            "bill_description": "Under the guise of protecting the power grid, this bill will have a chilling effect on the public\u2019s right to free speech and assembly. It creates felony penalties if someone trespasses on critical infrastructure facility properties with the \"intent\" to vandalize it, which creates a legal grey area that could lead to the imprisonment of someone for simply standing along a roadside or near a gate for \"impeding\" operations."
+            "bill_subtitle": "RGGI Abrogation",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0186",
+            "status": "Passed in the Senate (31-18), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Prevents Pennsylvania from entering the Regional Greenhouse Gas Initiative (RGGI), or enacting any sort of cap-and-invest carbon regulation to reduce harmful emissions."
         },
         {
-            "bill_number": "SB 831",
-            "stance": "No",
-            "bill_subtitle": "Carbon capture infrastructure buildout ",
-            "status": "Enacted",
-            "bill_date": "TBD",
-            "movement": "Signed by the Governor",
-            "bill_description": "This bill intends to make it easier for companies engaging in carbon capture and sequestration to do business in Pennsylvania, but places the public and landowners at significant risk. It brazenly passes liability for underground CO2 storage to taxpayers, seemingly forever, once underground injections cease."
-        },
-        {
-            "bill_number": "SB 188",
-            "stance": "No",
-            "bill_subtitle": "Concurrent resolution requirement for \"economically significant\" regulations",
-            "status": "Passed in the Senate (28-21)",
-            "bill_date": "5/9/23",
-            "movement": "Final Passage",
-            "bill_description": "Requires the General Assembly to pass a concurrent resolution to approve any final-form rulemaking deemed \u201ceconomically significant\u201d before it can be implemented. If one or both chambers failed to act, the final regulation would be deemed not approved and would not be implemented, potentially halting significant environmental legislation needed to protect vulnerable communities."
-        },
-        {
-            "bill_number": "SB 190",
-            "stance": "No",
-            "bill_subtitle": "Three year review of \"economically significant\" regulations",
-            "status": "Passed in the Senate (28-21)",
-            "bill_date": "5/9/23",
-            "movement": "Final Passage",
-            "bill_description": "Creates extraneous layers of bureaucracy that would place considerable time and capacity strains on agencies and the Independent Regulatory Review Commission without any new funding or support."
-        },
-        {
-            "bill_number": "SB 350",
-            "stance": "No",
-            "bill_subtitle": "Third party permitting ",
-            "status": "Passed in the Senate (29-19)",
-            "bill_date": "5/10/23",
-            "movement": "Final Passage",
-            "bill_description": "Provides for third party permitting which will force agencies to allow private companies to make permitting decisions without clear oversight."
-        },
-        {
-            "bill_number": "SB 144",
-            "stance": "No",
-            "bill_subtitle": "Weakened PFAS standards",
-            "status": "Passed in the Senate (36-14)",
-            "bill_date": "3/7/23",
-            "movement": "Final Passage",
-            "bill_description": "By only limiting, rather than ending, the use of PFAS in firefighting foam, this bill will continue to put Pennsylvania\u2019s communities and firefighters at risk of exposure and contamination."
-        },
-        {
-            "bill_number": "SB 832",
+            "bill_number": "SB 187",
             "stance": "No",
             "bill_subtitle": "Independent Energy Office",
-            "status": "Passed in the Senate (28-22)",
-            "bill_date": "5/1/24",
-            "movement": "Final Passage",
-            "bill_description": "The DEP already has an Energy Programs Office, making this legislation extraneous. Additionally, it contains provisions that could put hundreds of millions of dollars of federal funding at risk."
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0187",
+            "status": "Passed in the Senate (27-21), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Establishes a duplicative and politicized Independent Energy Office and contains provisions that could put hundreds of millions of dollars of alternative fuels funding at risk."
         },
         {
-            "bill_number": "SB 143",
+            "bill_number": "SB 311",
             "stance": "No",
-            "bill_subtitle": "Ban on municipal ability to incentivize renewable energy use",
-            "status": "Passed in the Senate (40-9)",
-            "bill_date": "3/8/23",
-            "movement": "Final Passage",
+            "bill_subtitle": "Anti-Renewables Energy Choice",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0311",
+            "status": "Passed in the Senate (34-15), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
             "bill_description": "Takes away communities' ability to incentivize the use of renewable energy or limit fossil fuel use in residential properties."
         },
         {
-            "bill_number": "SB 1",
+            "bill_number": "SB 333",
             "stance": "No",
-            "bill_subtitle": "Restrictive Voter ID requirements",
-            "status": "Passed in the Senate (28-20)",
-            "bill_date": "5/22/23",
-            "movement": "Final Passage",
-            "bill_description": "Harasses and disenfranchises voters by requiring \u2018valid identification,\u2019 which will disproportionately harm elderly and minority voters, robbing them of their constitutional right to vote."
+            "bill_subtitle": "REINS Act",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0333",
+            "status": "Passed in the Senate (27-23), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Requires the General Assembly to pass a concurrent resolution to approve any final-form rulemaking deemed \"economically significant\" before it can be implemented. If one or both chambers failed to act, the final regulation would be deemed not approved and would not be implemented, potentially halting significant environmental legislation needed to protect at-risk communities."
+        },
+        {
+            "bill_number": "SB 1236",
+            "stance": "No",
+            "bill_subtitle": "Weakening the Clean Streams Law",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb1236",
+            "status": "Passed in the Senate (30-20), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Waives requirements for a National Pollutant Discharge Elimination System permit, allowing for companies to bypass environmental protections for waterways."
+        },
+        {
+            "bill_number": "SB 444",
+            "stance": "No",
+            "bill_subtitle": "Automatic Three-Year Review of \"Economically Significant\" Regulations",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0444",
+            "status": "Passed in the Senate (27-23), Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Creates extraneous layers of bureaucracy that would place considerable time and capacity strains on agencies and the Independent Regulatory Review Commission without any new funding or support."
+        },
+        {
+            "bill_number": "SB 6",
+            "stance": "No",
+            "bill_subtitle": "Transparency in Permitting",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/sb0006",
+            "status": "Passed in the Senate (28-22). Awaiting action in the House.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Provides for third party permitting which will force agencies to allow private companies to make permitting decisions without clear oversight."
+        },
+        {
+            "bill_number": "HB 416",
+            "stance": "No",
+            "bill_subtitle": "Anti-RGGI Fiscal Code",
+            "bill_color": "red",
+            "bill_link": "https://www.palegis.us/legislation/bills/2025/hb0416",
+            "status": "Passed in the House (189-14), Passed in the Senate (43-6). Signed into law by the Governor.",
+            "bill_date": "",
+            "movement": "",
+            "bill_description": "Prohibits Pennsylvania from entering the Regional Greenhouse Gas Initiative (RGGI), which is the most consequential climate program in our Commonwealth's history."
         }
     ]
 };
-
 let map = L.map("map", {
     scrollWheelZoom: false,
     zoomSnap: 0.25,
@@ -126,7 +134,7 @@ function fetchSheet({ spreadsheetId, sheetName, apiKey, complete }) {
 }
 
 async function fetchMemberData() {
-    const response = await fetch("/data/senate_member_votes_23-24.json");
+    const response = await fetch("/data/senate_member_votes_25-26.json");
     const json = await response.json();
     return json;
 }
@@ -148,9 +156,9 @@ function showInfo(results) {
     let lifetimeScoreColor;
 
     $.each(data, function(i, member) {
-        scoreColor = getColor(parseInt(member.score_num));
+        scoreColor = getColor(memberScore(member, member.score_num));
         member['scoreColor'] = scoreColor;
-        lifetimeScoreColor = getColor(parseInt(member.lifetime_score));
+        lifetimeScoreColor = getColor(memberScore(member, member.lifetime_score));
         member['lifetimeScoreColor'] = lifetimeScoreColor;
         if (member.District) {
             PADistricts[member.District] = member;
@@ -192,7 +200,7 @@ function showInfo(results) {
 
 let geoStyle = function(data) {
     let legisId = data.properties.NAME;
-    let scoreColor = getColor(parseInt(PADistricts[legisId].score_num));
+    let scoreColor = getColor(memberScore(PADistricts[legisId], PADistricts[legisId].score_num));
 
     return {
         fillColor: scoreColor,
@@ -215,8 +223,17 @@ $(document).ready(function() {
 });
 
 // get color depending on score value
+// A vacant seat has no score to report -- render it neutral rather than as a
+// legislator who voted against the environment every time.
+function memberScore(member, score) {
+    if (member && member.Party === "Vacant") {
+        return "Vacant";
+    }
+    return parseInt(score);
+}
+
 function getColor(score) {
-    return score === "Medical leave" ? '#fefefe' :
+    return (score === "Medical leave" || score === "Vacant") ? '#fefefe' :
         score > 99 ? '#409B06' :
             score > 74 ? '#A8CA02' :
                 score > 49 ? '#FEF200' :

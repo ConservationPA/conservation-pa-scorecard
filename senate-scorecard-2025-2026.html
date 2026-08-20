@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PA Senate &middot; Pennsylvania Environmental Scorecard 2025&ndash;2026</title>
+<meta name="description" content="How every Pennsylvania state senator voted on the environment in the 2025-2026 session, district by district.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scorecard.conservationpa.org/senate-scorecard-2025-2026.html">
+<meta property="og:title" content="Conservation PA | PA Senate Scorecard 2025&ndash;2026">
+<meta property="og:description" content="The Pennsylvania Environmental Scorecard is a joint project of Conservation Voters of PA, Clean Air Action, Sierra Club Pennsylvania Chapter, and Clean Water Action. The scorecard features crucial environmental votes that have taken place in the Pennsylvania General Assembly during the current session.">
+<meta property="og:image" content="https://scorecard.conservationpa.org/images/CVPA_Social.png">
+<meta property="og:image:width" content="2500">
+<meta property="og:image:height" content="1313">
+<link rel="icon" href="images/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png?v=48f33e4b">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png?v=1f6107c0">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png?v=7d32b83b">
+<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg?v=b1709c7a" color="#085A0A">
+<link rel="manifest" href="images/favicon/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vendor/leaflet-1.9.4.css?v=c02c12fe">
+<link rel="stylesheet" href="css/site.css?v=b898070e">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <img src="images/conservationpa-logo.svg?v=4c8a2121" alt="Conservation Voters of Pennsylvania">
+    </a>
+    <button class="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="sitenav">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+    <nav class="site" id="sitenav">
+      <a href="index.html">Home</a>
+      <a href="house-scorecard-2025-2026.html">House Votes</a>
+      <a href="senate-scorecard-2025-2026.html" class="on">Senate Votes</a>
+      <a href="index.html#bills">Bills</a>
+      <a href="https://www.conservationpa.org/scorecard/library" target="_blank" rel="noopener">Previous Scorecards</a>
+      <a href="20260818_CVPA_Scorecard.pdf" target="_blank" rel="noopener"><span class="dot"></span>PDF</a>
+      <a class="cta" href="index.html#signup">Sign Up</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="pagehead">
+    <div class="eyebrow">State Senate &middot; 50 Districts</div>
+    <h1>Senate votes we scored</h1>
+
+    <a class="chamberswitch" href="house-scorecard-2025-2026.html">
+      Switch to the House
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M4 12h14M12.5 5.5 19 12l-6.5 6.5"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div id="statband"></div>
+
+  <div class="layout">
+    <aside class="panel" id="panel">
+      <div class="lookup">
+        <h2>Find my legislator
+          <span class="tip">
+            <button class="helptoggle" id="helptoggle" type="button" aria-label="About the address lookup"
+                    aria-describedby="helptip" aria-expanded="false">?</button>
+            <span class="tiptext" role="tooltip" id="helptip">
+              <b>Find my legislator</b>
+              Type a street address with the city and state. You get your senator and your representative,
+              both of their scores, and your district opened on this map. The address goes to the US Census
+              geocoder to match a district, and is never stored on our servers.
+            </span>
+          </span>
+        </h2>
+        <form id="lookupform">
+          <input id="addr" placeholder="123 Main St, Erie, PA" aria-label="Your address" autocomplete="street-address">
+          <button type="submit">Go</button>
+        </form>
+        <div class="hint" id="lookuphint">One lookup returns both chambers. Nothing is stored on our servers.</div>
+        <div id="lookupresult"></div>
+      </div>
+      <div class="scroll" id="panelbody"></div>
+    </aside>
+
+    <div class="mapcol">
+      <div class="maptools">
+        <div class="regions">
+          <button type="button" data-region="Pennsylvania">Pennsylvania</button>
+          <button type="button" data-region="Pittsburgh">Pittsburgh</button>
+          <button type="button" data-region="Philadelphia">Philadelphia</button>
+          <button type="button" data-region="Allentown / Scranton">Allentown / Scranton</button>
+        </div>
+        <div class="searchfield" hidden>
+          <input id="listsearch" placeholder="Search name or district number" aria-label="Search members">
+        </div>
+        <button class="searchtoggle" id="searchtoggle" type="button" title="Search members"
+                aria-label="Search members" aria-expanded="false" aria-controls="listsearch">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M15.4 15.4 20.5 20.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="viewswitch">
+          <button type="button" data-view="map" class="on" aria-pressed="true">Map</button>
+          <button type="button" data-view="list" aria-pressed="false">List</button>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div id="map"></div>
+      <div id="listview" hidden>
+        <div class="listwrap">
+          <table id="listtable"><thead></thead><tbody></tbody></table>
+          <div id="listempty" hidden>No member matches that search.</div>
+        </div>
+      </div>
+      <div class="maphint" id="maphint">Hover a district for the member. Click to freeze the panel; Escape to release.</div>
+    </div>
+  </div>
+
+  <section class="votes">
+    <div class="eyebrow">The scored votes</div>
+    <h2>Senate bills we scored</h2>
+    <div class="votegrid" id="votegrid"></div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="inner">
+    <span>&copy; 2026 <a class="org" href="https://www.conservationpa.org/" target="_blank" rel="noopener">Conservation Voters of Pennsylvania</a></span>
+    <span class="socials">
+      <a href="https://www.facebook.com/ConservationPA/" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on Facebook" aria-label="Conservation Voters of Pennsylvania on Facebook"><img src="images/facebook.svg?v=b70a9fd8" alt=""></a>
+      <a href="https://www.youtube.com/channel/UC4MBLxcg0TRunwTifxLVA2g" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on YouTube" aria-label="Conservation Voters of Pennsylvania on YouTube"><img src="images/youtube.svg?v=2101aedb" alt=""></a>
+      <a href="https://www.instagram.com/conservationvoterspa/" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on Instagram" aria-label="Conservation Voters of Pennsylvania on Instagram"><img src="images/instagram.svg?v=2b5b606e" alt=""></a>
+      <a href="https://bsky.app/profile/conservationpa.bsky.social" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on Bluesky" aria-label="Conservation Voters of Pennsylvania on Bluesky"><img src="images/bluesky.svg?v=c303d001" alt=""></a>
+      <a href="https://www.threads.com/@conservationvoterspa" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on Threads" aria-label="Conservation Voters of Pennsylvania on Threads"><img src="images/threads.svg?v=5fa94c73" alt=""></a>
+      <a href="https://www.tiktok.com/@conservationpa" target="_blank" rel="noopener" class="social" title="Conservation Voters of Pennsylvania on TikTok" aria-label="Conservation Voters of Pennsylvania on TikTok"><img src="images/tiktok.svg?v=586a8cd5" alt=""></a>
+    </span>
+  </div>
+</footer>
+
+<button id="backtotop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15.5 12 8l8 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+<script src="js/vendor/leaflet-1.9.4.js?v=35b48eb9"></script>
+<script src="maps/cb_2021_pa_senate.js?v=30109b5f"></script>
+<script>window.CHAMBER = 'senate';</script>
+<script src="js/scorecard.js?v=ec151113"></script>
+<script src="js/map-page.js?v=93fe5a9f"></script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113166990-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-113166990-3');
+</script>
+</body>
+</html>

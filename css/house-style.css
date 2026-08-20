@@ -92,7 +92,6 @@ body {
 ul {
     padding: 0 2.5em 0 2.5em;
     margin: 0;
-    /*list-style-image: url(../images/triangle.gif);*/
     list-style-type: disc;
 }
 

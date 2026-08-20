@@ -1,0 +1,492 @@
+/* Pennsylvania Environmental Scorecard, 2025-2026 design.
+   Shared by the overview (index.html) and the two chamber map pages. */
+
+:root{
+  --ink:#0C2A0B; --paper:#F5F6F0; --card:#fff; --rule:#D8DCCC; --muted:#5C665C;
+  --green:#085A0A; --rust:#A8371B; --sand:#E9EDE0;
+  /* One height for both columns of the chamber pages, so the panel and the
+     map/list line up at the bottom no matter how tall either one's content is.
+     Viewport-derived, with a cap so the map does not sprawl on tall monitors. */
+  --colh:min(calc(100vh - 110px),920px);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+  font-family:'Public Sans',system-ui,sans-serif;text-wrap:pretty}
+a{color:var(--green);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--rust)}
+::selection{background:#CDE8C6}
+h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;margin:0}
+img{max-width:100%}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--rust)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- header / footer, every page ---------- */
+header.site{position:sticky;top:0;z-index:1200;background:rgba(245,246,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.bar{max-width:1400px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.brand img{height:38px;width:auto;display:block}
+nav.site{display:flex;gap:4px;align-items:center;margin-left:auto;flex-wrap:wrap}
+nav.site a,nav.site button{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none;color:var(--ink);
+  background:transparent;border:none;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:6px}
+nav.site a:hover,nav.site button:hover{background:#E2E7D8;color:var(--ink)}
+nav.site a.on{background:#E2E7D8;font-weight:600}
+nav.site a.cta{background:var(--rust);color:var(--paper);font-weight:600;padding:9px 18px;margin-left:6px}
+nav.site a.cta:hover{background:#8C2C14;color:#fff}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--rust)}
+
+/* Hamburger. Hidden until the nav no longer fits beside the logo; the media
+   query near the bottom of this file is what turns it on. */
+.navtoggle{display:none;margin-left:auto;width:44px;height:44px;align-items:center;justify-content:center;
+  padding:0;background:transparent;border:1px solid var(--rule);border-radius:12px;color:var(--ink);cursor:pointer}
+.navtoggle:hover{background:#E2E7D8}
+.navtoggle .bars{display:block;position:relative;width:20px;height:14px}
+.navtoggle .bars i{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;
+  transition:transform .18s ease,opacity .18s ease}
+.navtoggle .bars i:nth-child(1){top:0}
+.navtoggle .bars i:nth-child(2){top:6px}
+.navtoggle .bars i:nth-child(3){top:12px}
+.navtoggle[aria-expanded="true"] .bars i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.navtoggle[aria-expanded="true"] .bars i:nth-child(2){opacity:0}
+.navtoggle[aria-expanded="true"] .bars i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media (prefers-reduced-motion:reduce){.navtoggle .bars i{transition:none}}
+
+footer.site{background:var(--ink);color:#A6B3A0;padding:40px 32px}
+footer.site .inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px;align-items:center}
+footer.site a{color:#A6B3A0;text-decoration:none}
+footer.site a:hover{color:var(--paper)}
+/* The one piece of running text in the footer, so it needs an underline to read
+   as a link at all; the social icons do not. */
+footer.site a.org{text-decoration:underline;text-decoration-color:#3E5A3C;
+  text-decoration-thickness:1px;text-underline-offset:3px}
+footer.site a.org:hover{text-decoration-color:currentColor}
+footer.site .socials{display:flex;gap:10px;flex-wrap:wrap}
+footer.site a.social{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid #2B4429}
+footer.site a.social:hover{border-color:#A9D6A3;background:#123310}
+footer.site a.social img{width:17px;height:17px;display:block}
+
+/* The solid green chevron button the 2024 scorecard used, in this design's
+   palette: same place, same shape, same colour. */
+#backtotop{position:fixed;right:25px;bottom:25px;z-index:1100;padding:11px 17px;border-radius:5px;
+  border:1px solid var(--green);background:var(--green);color:#fff;line-height:1;cursor:pointer;
+  display:grid;place-items:center;opacity:0;visibility:hidden;
+  /* The second shadow is a pale ring: invisible on the paper background, and
+     what keeps the button off the dark green sections it scrolls over. */
+  box-shadow:0 8px 24px -14px rgba(12,42,11,.7),0 0 0 1.5px rgba(237,241,230,.35);
+  transition:opacity .2s,background .15s,border-color .15s}
+#backtotop svg{width:20px;height:20px;display:block}
+#backtotop.show{opacity:1;visibility:visible}
+#backtotop:hover{background:var(--ink);border-color:var(--ink)}
+#backtotop:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+/* ---------- overview page ---------- */
+.hero{max-width:1400px;margin:0 auto;padding:0 32px;scroll-margin-top:90px}
+.hero .inner{display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start;padding:72px 0 64px}
+.hero .lede{flex:3 1 430px;min-width:0}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px}
+.hero h1{font-size:clamp(44px,5.6vw,78px);line-height:.98;letter-spacing:-0.02em;margin:0 0 24px;color:var(--green)}
+.hero p.sub{font-size:19px;line-height:1.55;color:#3B473A;max-width:56ch;margin:0 0 18px}
+.hero p.sub:last-child{margin-bottom:0}
+
+.lookupcard{flex:1 1 320px;min-width:0;max-width:460px;background:var(--card);border:1px solid var(--rule);border-radius:18px;
+  padding:26px;box-shadow:0 1px 0 var(--rule),0 18px 40px -32px rgba(12,42,11,.5)}
+.lookupcard h2{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.lookupcard p{font-size:15px;line-height:1.45;color:#3B473A;margin:0 0 16px}
+.lookupcard form{display:flex;gap:8px}
+.lookupcard input{flex:1;min-width:0;padding:12px 14px;border:1px solid #C2C9B6;border-radius:10px;font-family:inherit;
+  font-size:15px;background:#FAFBF5;color:var(--ink)}
+.lookupcard input:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
+.lookupcard button{padding:12px 18px;border:none;border-radius:10px;background:var(--green);color:#fff;font-family:inherit;
+  font-weight:600;font-size:15px;cursor:pointer}
+.lookupcard button:hover{background:var(--ink)}
+.lookupcard .hint{font-size:13px;color:#7A837A;margin-top:10px;line-height:1.45}
+.lookupcard .results{margin-top:18px;border-top:1px solid #E6EBDC;padding-top:16px;display:grid;gap:10px}
+.lookupcard .results:empty{display:none}
+
+.numbers{background:var(--green);color:#EDF1E6}
+.numbers .inner{max-width:1400px;margin:0 auto;padding:56px 32px}
+.numbers h2{font-size:40px;margin:0 0 34px}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#2F7A31;
+  border:1px solid #2F7A31;border-radius:16px;overflow:hidden}
+.numgrid .cell{background:var(--green);padding:26px 24px}
+.numgrid .n{font-family:'Instrument Serif',Georgia,serif;font-size:62px;line-height:1}
+.numgrid .lbl{font-size:14px;color:#C9DFC3;margin-top:10px;line-height:1.4}
+.splits{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:28px}
+.split{border:1px solid #2F7A31;border-radius:16px;padding:24px}
+.split h3{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:#A6CFA0;margin:0 0 18px}
+.split .rows{display:grid;gap:14px}
+.split .lab{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.split .lab b{font-weight:700}
+.split .track{height:10px;border-radius:999px;background:#064206;overflow:hidden}
+.split .fill{height:100%}
+
+.prose{max-width:1400px;margin:0 auto;padding:80px 32px}
+/* Two prose sections running straight into each other stack their padding into
+   a gap twice the size of any other on the page -- and unlike the others there
+   is no change of background across it to justify the room. */
+.prose + .prose{padding-top:16px}
+.prose > :last-child{margin-bottom:0}
+.prose h2{font-size:40px;line-height:1.05;margin:0 0 24px}
+.prose .lead{font-family:'Instrument Serif',Georgia,serif;font-size:27px;line-height:1.35;margin:0 0 28px;
+  color:var(--ink)}
+.prose p{font-size:17px;line-height:1.7;color:#2C382C;margin:0 0 20px}
+/* One line of orientation under a section heading, before the cards below it. */
+.sectionlede{font-size:17px;line-height:1.6;color:#3B473A;margin:0 0 32px}
+/* Sections the header nav and the in-page links land on. */
+.prose[id],.howto[id]{scroll-margin-top:92px}
+
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.minicard{border-radius:16px;background:var(--card);border:1px solid var(--rule);padding:26px 28px}
+.minicard h3{font-size:27px;line-height:1.15;margin:0 0 14px;color:var(--green)}
+.minicard.against h3{color:var(--rust)}
+.minicard ul{list-style:none;margin:0;padding:0;font-size:16.5px;line-height:1.5}
+/* A bill we asked members to stop is red down to its link, so the Senate card
+   reads as a block of red the way the leaf-green House card reads as green.
+   --stance is that colour: the leaf's green or the cross's red, whichever this
+   row carries. */
+/* --stance is the one colour a bill gets: the leaf's green if we asked members
+   to pass it, the cross's red if we asked them to stop it. Symbol, number and
+   title all take it, so a card of bills we opposed reads as a block of red and
+   the House card reads as green, with nothing half-coloured in between. */
+.minicard li{--stance:var(--green);display:flex;gap:11px;align-items:flex-start;padding:10px 0;
+  border-top:1px solid #EDF1E3;color:var(--stance)}
+.minicard li:first-child{border-top:0;padding-top:2px}
+.minicard li.bad{--stance:var(--rust)}
+/* The bill number is underlined standing still, so nobody has to hover to find
+   out it is a link. The colour holds on hover, and the underline extends across
+   the title, which is part of the same link and the same click target. */
+.minicard a,.minicard a:hover{color:var(--stance)}
+.minicard a{font-weight:400;text-decoration:none}
+.minicard a b{font-weight:700;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.minicard a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.billicon{flex:0 0 auto;width:21px;height:21px;display:block;margin-top:1px}
+.billicon.leaf{color:var(--green)}
+.billicon.cross{color:var(--rust)}
+
+.howto{background:var(--sand);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.howto .inner{max-width:1400px;margin:0 auto;padding:72px 32px}
+.howto h2{font-size:40px;margin:0 0 20px}
+/* The two map pictures, each one the link to its chamber's page. */
+.chambercards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+a.chambercard{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--rule);
+  border-radius:18px;overflow:hidden;transition:transform .15s,border-color .15s,box-shadow .15s}
+a.chambercard:hover{border-color:var(--green);color:inherit;transform:translateY(-2px);
+  box-shadow:0 20px 34px -28px rgba(12,42,11,.75)}
+a.chambercard:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.chambercard .shot{display:block;background:#E6EADD;border-bottom:1px solid var(--rule)}
+.chambercard .shot img{display:block;width:100%;height:auto}
+.chambercard .lab{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:18px 24px 20px}
+.chambercard .lab b{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:28px;line-height:1.1;color:var(--green)}
+.chambercard .lab b::after{content:"→";font-family:'Public Sans',system-ui,sans-serif;font-size:21px;margin-left:9px}
+.chambercard:hover .lab b{color:var(--ink)}
+.chambercard .lab em{font-style:normal;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){a.chambercard{transition:none}a.chambercard:hover{transform:none}}
+
+.signup{max-width:1400px;margin:0 auto;padding:0 32px 40px;display:grid;gap:28px;scroll-margin-top:80px}
+.signup hr{border:none;border-top:1px solid var(--rule);margin:0}
+.coalition{max-width:1400px;margin:0 auto;padding:0 32px}
+.coalition .inner{border-top:1px solid var(--rule);padding:48px 0 64px}
+.coalition .lbl{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7A837A;text-align:center;margin-bottom:32px}
+.coalition .logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:56px}
+.coalition .logos a{display:block}
+.coalition .logos a:hover{opacity:.7}
+.coalition img{width:100%;height:auto;display:block}
+
+/* ---------- chamber pages ---------- */
+.wrap{max-width:1400px;margin:0 auto;padding:28px 32px 64px}
+.pagehead{margin-bottom:24px}
+.pagehead h1{font-size:clamp(34px,4vw,52px);line-height:1;margin:8px 0 0}
+
+/* One button with one meaning. The eyebrow and the title already say which
+   chamber you are on, so a two-state toggle spent its space repeating that and
+   left people unsure which half was the current page and which was the link.
+   All that is left to do is go to the other chamber, so it says exactly that. */
+a.chamberswitch{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:12px 22px;
+  border-radius:999px;background:var(--green);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;
+  transition:background .15s}
+a.chamberswitch:hover{background:var(--ink);color:var(--paper)}
+a.chamberswitch:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+a.chamberswitch svg{width:18px;height:18px;flex:0 0 auto;display:block;transition:transform .15s}
+a.chamberswitch:hover svg{transform:translateX(3px)}
+@media (prefers-reduced-motion:reduce){a.chamberswitch,a.chamberswitch svg{transition:none}
+  a.chamberswitch:hover svg{transform:none}}
+.viewswitch{display:flex;background:#E2E7D8;border-radius:999px;padding:4px}
+.viewswitch button{padding:9px 18px;border-radius:999px;border:none;font-family:inherit;font-size:14px;font-weight:600;
+  cursor:pointer;background:transparent;color:#4A554A}
+.viewswitch button.on{background:var(--ink);color:var(--paper)}
+
+#listview{display:flex;flex-direction:column;gap:12px;flex:1;min-height:0}
+#listview[hidden]{display:none}
+#listsearch{width:100%;padding:10px 14px;border:1px solid #C2C9B6;border-radius:999px;font-family:inherit;font-size:15px;background:#fff}
+#listsearch:focus{outline:2px solid var(--green);outline-offset:-1px}
+.listwrap{background:#fff;border:1px solid var(--rule);border-radius:16px;flex:1;min-height:0;overflow:auto}
+#listtable{width:100%;border-collapse:collapse;font-size:15px}
+#listtable th{position:sticky;top:0;z-index:2;background:var(--sand);text-align:left;padding:12px 16px;font-size:12px;
+  font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#4A554A;cursor:pointer;white-space:nowrap;
+  border-bottom:1px solid var(--rule)}
+#listtable td{padding:10px 16px;border-bottom:1px solid #EAEEE0}
+#listtable tbody tr{cursor:pointer}
+#listtable tbody tr:hover{background:var(--paper)}
+#listtable tbody tr.sel{background:#EFF4EA;box-shadow:inset 3px 0 0 var(--green)}
+#listtable .num{color:#5C665C;font-variant-numeric:tabular-nums;width:70px}
+#listtable .nm{font-weight:600}
+#listtable .nm a{color:inherit;text-decoration:none}
+#listtable .nm a:hover{color:var(--green)}
+#listtable th:focus-visible,#listtable .nm a:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+#listtable .party{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;font-size:12px;font-weight:700}
+#listtable .party.D{background:#DCE6F2;color:#1D3F6B}
+#listtable .party.R{background:#F4DEDA;color:#7A2A17}
+#listtable .party.V{background:#E7EADD;color:#5C665C}
+#listtable .chip{display:inline-block;min-width:56px;text-align:center;padding:5px 10px;border-radius:7px;
+  font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+#listtable .chip.ghost{background:transparent;color:#4A554A;border:1px solid}
+#listempty{padding:18px 16px;font-size:15px;color:var(--muted)}
+
+#statband{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px}
+.stat{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:18px 20px}
+.stat h3{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.stat p{margin:0;font-size:15px;line-height:1.5;color:#2C382C}
+.stat.champs{border-left:4px solid var(--green)}
+.stat.champs h3{color:var(--green)}
+.stat.zeros{border-left:4px solid #C0392B}
+.stat.zeros h3{color:#C0392B}
+/* Names in the band open that member's record. Underlined in the body colour so
+   a long roll call reads as a sentence, not a wall of links. */
+.stat p a.who,.stat p .morelink{color:inherit;text-decoration:underline;text-decoration-color:#B7C4B3;
+  text-decoration-thickness:1px;text-underline-offset:3px}
+.stat p a.who{white-space:nowrap}
+.stat p .morelink{border:0;background:none;padding:0;font:inherit;cursor:pointer}
+.stat.champs p a.who:hover,.stat.champs p .morelink:hover{color:var(--green);text-decoration-color:currentColor}
+.stat.zeros p a.who:hover,.stat.zeros p .morelink:hover{color:#C0392B;text-decoration-color:currentColor}
+.stat p a.who:focus-visible,.stat p .morelink:focus-visible{outline:2px solid var(--green);outline-offset:2px;border-radius:3px}
+/* The three averages are the headline of this band, so they are set at the size
+   of the numbers on the overview page and the two party figures take the colour
+   of their score band rather than the grey the labels use. */
+.stat.avg{background:var(--ink);border-color:var(--ink);display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:20px}
+.stat.avg .big{font-family:'Instrument Serif',Georgia,serif;font-size:52px;line-height:1;color:#fff;
+  padding-right:22px;border-right:1px solid #2A4A28;flex:0 0 auto}
+.stat.avg .party{display:flex;gap:26px;flex:1 1 auto}
+.stat.avg .party b{display:block;font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:32px;line-height:1}
+.stat.avg .big span,.stat.avg .party span{display:block;font-family:'Public Sans',system-ui,sans-serif;font-size:11.5px;
+  font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A3BB9E;margin-top:8px}
+.stat.avg p.vacant{flex:1 1 100%;margin:0;color:#A3BB9E;font-size:13px}
+
+.layout{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:24px;align-items:start}
+
+/* The height is fixed, not a cap: the panel ends level with the map beside it
+   whether it is holding the map help or a full voting record, and it does not
+   resize as you hover from one member to the next. Only a clicked (frozen)
+   card follows the scroll. */
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:18px;overflow:hidden;
+  height:var(--colh);display:flex;flex-direction:column}
+.panel.frozen{position:sticky;top:86px}
+.panel .scroll{overflow:auto;padding:20px;position:relative}
+.lookup{padding:18px 20px;border-bottom:1px solid var(--rule);background:var(--sand)}
+.lookup h2{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.lookup form{display:flex;gap:8px}
+.lookup input{flex:1;min-width:0;padding:11px 13px;border:1px solid #C2C9B6;border-radius:10px;font-family:inherit;font-size:15px;background:#fff}
+.lookup input:focus{outline:2px solid var(--green);outline-offset:-1px}
+.lookup button{padding:11px 16px;border:none;border-radius:10px;background:var(--green);color:#fff;font-family:inherit;font-weight:600;font-size:15px;cursor:pointer}
+.lookup button:hover{background:var(--ink)}
+.hint{font-size:12.5px;color:#7A837A;margin-top:9px;line-height:1.45}
+.lookup button.helptoggle{padding:0;width:26px;height:26px;border-radius:50%;border:1px solid #C2C9B6;background:#fff;color:var(--muted);
+  font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;flex:0 0 auto}
+.lookup button.helptoggle:hover{border-color:var(--green);color:var(--green)}
+
+.tip{position:relative;display:flex;flex:0 0 auto}
+.tiptext{position:absolute;top:calc(100% + 8px);right:0;z-index:30;width:max-content;max-width:270px;
+  background:var(--ink);color:#DCE4D4;font-family:'Public Sans',system-ui,sans-serif;font-size:12.5px;font-weight:400;
+  letter-spacing:0;text-transform:none;line-height:1.5;text-align:left;padding:11px 13px;border-radius:9px;
+  box-shadow:0 10px 24px -16px rgba(12,42,11,.9);opacity:0;visibility:hidden;transform:translateY(-3px);
+  transition:opacity .12s ease,transform .12s ease;pointer-events:none}
+.tiptext b{display:block;color:#fff;font-weight:700;font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
+.tiptext em{display:block;margin-top:7px;padding-top:7px;border-top:1px solid #24401F;color:#A9BCA3;font-style:normal}
+.tiptext::before{content:"";position:absolute;bottom:100%;right:9px;border:6px solid transparent;border-bottom-color:var(--ink)}
+.tip:hover .tiptext,.tip:focus-within .tiptext,.tip.open .tiptext{opacity:1;visibility:visible;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){.tiptext{transition:none}}
+
+.result{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;padding:11px;border:1px solid #E6EBDC;
+  border-radius:12px;background:#FAFBF5;margin-top:10px}
+.result:hover{border-color:var(--green);background:#EFF4EA;color:inherit}
+.result .sc{min-width:50px;height:50px;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:16px;flex:0 0 auto}
+.result small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7A837A}
+.result strong{display:block;font-size:15.5px}
+.result em{display:block;font-size:13px;color:var(--muted);font-style:normal}
+
+/* Quieter than the Go button it sits under, so it has to out-specify the
+   blanket button styling in .lookup and .lookupcard. */
+.lookup .clearlookup,.lookupcard .clearlookup{display:block;margin:10px 0 0 auto;justify-self:end;
+  padding:5px 12px;border:1px solid #C2C9B6;border-radius:999px;background:transparent;font-family:inherit;
+  font-size:12px;font-weight:600;color:var(--muted);cursor:pointer}
+.lookup .clearlookup:hover,.lookupcard .clearlookup:hover{background:#DCE2CF;border-color:#A8B29C;color:var(--muted)}
+.lookup .clearlookup:focus-visible,.lookupcard .clearlookup:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.lookupcard .results .clearlookup{margin-top:0}
+
+.helpbox{font-size:14.5px;line-height:1.6;color:#2C382C}
+.helpbox ul{margin:0;padding-left:18px}
+.helpbox li{margin-bottom:9px}
+.helpbox h3{font-family:'Instrument Serif',Georgia,serif;font-size:26px;margin:0 0 12px}
+
+.member{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.avatar{width:74px;height:74px;border-radius:12px;flex:0 0 auto;overflow:hidden;position:relative;
+  background:repeating-linear-gradient(135deg,#E7EADD 0 6px,#EFF2E7 6px 12px);border:1px solid var(--rule);
+  display:grid;place-items:center;font-size:9px;font-family:ui-monospace,monospace;color:#909684;text-align:center;padding:4px}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.avatar.noimg::after{content:"no photo"}
+.member h3{font-size:24px;line-height:1.1}
+.member .sub{font-size:14px;color:var(--muted);margin-top:3px}
+.member .sub a{color:var(--muted);text-decoration:none}
+.member .sub a:hover{color:var(--green)}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 18px}
+.scorebox{border:1px solid var(--rule);border-radius:12px;padding:12px;text-align:center}
+.scorebox span{display:block;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.scorebox b{display:block;font-size:26px;border-radius:8px;padding:6px 0;font-variant-numeric:tabular-nums}
+.tally{font-size:13px;color:#5C665C;margin-bottom:6px}
+.votelist{list-style:none;margin:0;padding:0}
+.votelist li{--stance:var(--green);display:flex;gap:9px;padding:7px 0;border-top:1px solid #EAEEE0;
+  font-size:14.5px;line-height:1.45}
+.votelist li.bad{--stance:var(--rust)}
+.votelist .ic{flex:0 0 auto;width:18px;height:18px;border-radius:5px;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;margin-top:1px}
+.votelist .ic.none{background:#D5DAC8;color:#4A554A}
+/* Bills in a member's record follow the same rule as the bill lists: number and
+   title in one link, in the bill's own colour, and the underline is the hover.
+   A bill is the same colour here as it is on the card it links to. */
+.votelist a,.votelist a:hover{color:var(--stance)}
+.votelist a{font-weight:400;text-decoration:none}
+.votelist a b{font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.votelist a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.votelist .note{color:#7A837A}
+.votelist .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  background:#E7EADD;color:#4A554A;border-radius:999px;padding:1px 8px;margin-left:2px;white-space:nowrap}
+.tip.closetip{position:absolute;top:14px;right:14px;z-index:20}
+.panelclose{width:26px;height:26px;border-radius:6px;border:1px solid #E3E7D8;background:#fff;color:#8A937F;
+  font-family:inherit;font-size:15px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0;
+  transition:border-color .12s ease,color .12s ease}
+.panelclose:hover{border-color:#A8B29C;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.panelclose{transition:none}}
+.panelclose:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+/* Fixed to the shared column height; the map or the list takes whatever the
+   search box, the tools row, the legend and the hint leave over, so the two
+   views end at the same place as the panel beside them. */
+.mapcol{display:flex;flex-direction:column;gap:12px;height:var(--colh)}
+.maptools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+/* The toggle carries the auto margin, not the switch, so it stays pinned to the
+   left edge of Map/List whichever of the regions or the search box is showing. */
+.maptools .searchtoggle{margin-left:auto}
+
+/* Open, the search box takes the row the region buttons just gave up. */
+.searchfield{flex:1;min-width:190px;display:flex}
+.searchfield[hidden]{display:none}
+.searchtoggle{flex:none;width:40px;height:40px;display:grid;place-items:center;padding:0;border-radius:999px;
+  border:1px solid var(--rule);background:#fff;color:var(--ink);cursor:pointer;
+  transition:border-color .12s ease,color .12s ease,background-color .12s ease}
+.searchtoggle svg{width:18px;height:18px;display:block}
+.searchtoggle:hover{border-color:var(--green);color:var(--green)}
+.searchtoggle.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.searchtoggle:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.searchtoggle{transition:none}}
+
+.regions[hidden],.legend[hidden]{display:none}
+.regions{display:flex;gap:6px;flex-wrap:wrap}
+.regions button{white-space:nowrap;padding:7px 13px;border-radius:999px;border:1px solid var(--rule);background:#fff;
+  font-family:inherit;font-size:13px;cursor:pointer;color:var(--ink)}
+.regions button:hover{border-color:var(--green);color:var(--green)}
+.regions button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.legend{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend .swatches{display:flex;flex-wrap:wrap}
+.legend .sw{display:grid;place-items:center;min-width:52px;height:22px;padding:0 9px;font-size:11px;font-weight:700;color:#fff}
+#map{flex:1;min-height:0;border-radius:18px;border:1px solid var(--rule);background:#E6EADD;z-index:1}
+#map[hidden]{display:none}
+.maphint{font-size:12.5px;color:#7A837A}
+
+.votes{margin-top:64px}
+.votes h2{font-size:38px;margin-bottom:6px}
+.votegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:24px}
+.votecard{background:#fff;border:1px solid var(--rule);border-radius:16px;padding:20px;scroll-margin-top:100px}
+.votecard.hl{border-color:var(--green);box-shadow:0 0 0 3px rgba(8,90,10,.15)}
+.votecard{--stance:var(--green)}
+/* The heading takes the colour of the badge above it, number and title alike,
+   the same way a row does in the overview's bill lists. */
+.votecard h3{font-family:'Public Sans',system-ui,sans-serif;font-size:17px;font-weight:700;line-height:1.35;
+  margin-bottom:10px;color:var(--stance)}
+.votecard h3 a,.votecard h3 a:hover{color:var(--stance)}
+.votecard h3 a{text-decoration:none}
+.votecard h3 a b{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.votecard h3 a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+/* A bill we asked members to stop, in the red it has on the overview page. */
+.votecard.bad{--stance:var(--rust);border-color:#E8D2CB}
+.votecard p{font-size:14.5px;line-height:1.6;color:#3B473A;margin:0 0 10px;white-space:pre-line}
+.votecard p.status{color:#5C665C;font-size:13px;margin:0}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;padding:4px 11px 4px 8px;border-radius:999px;margin-bottom:10px}
+.badge .billicon{width:15px;height:15px;color:currentColor}
+.badge.yay{background:#DFEFDB;color:#085A0A}
+.badge.nay{background:#F7E2DC;color:#A8371B}
+
+.leaflet-container{font-family:'Public Sans',system-ui,sans-serif;border-radius:18px}
+
+@media (max-width:900px){
+  /* minmax(0,…), not 1fr: a plain 1fr track is at least as wide as its widest
+     item's min-content, and the list table's is wider than a phone. That grew
+     the column past the screen and carried Map/List off the right edge. */
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .panel,.mapcol{min-width:0}
+  /* A phone row cannot hold a usable search box, the toggle and Map/List at
+     once, so the box takes a line of its own and the two buttons sit under it. */
+  .searchfield{flex-basis:100%}
+  .panel,.panel.frozen{position:static;height:auto;max-height:none}
+  /* Stacked, so there is nothing to line up with: both columns go back to
+     sizing from their own content. */
+  .mapcol{height:auto}
+  #map,.listwrap{flex:0 0 auto}
+  #listview{flex:0 0 auto;min-height:auto}
+  .listwrap{max-height:58vh}
+  .bar,.wrap{padding-left:18px;padding-right:18px}
+  .hero,.prose,.signup,.coalition,.numbers .inner,.howto .inner{padding-left:18px;padding-right:18px}
+  .hero .inner{gap:32px;padding:44px 0 40px}
+  .numbers .inner,.howto .inner{padding-top:48px;padding-bottom:48px}
+  .prose{padding-top:56px;padding-bottom:56px}
+  .coalition .logos{gap:32px}
+  #map{height:58vh}
+}
+
+/* The logo is about 190px wide and the seven nav links roughly 700px, so below
+   about 1000px they collide and the nav wraps onto a line of its own. Collapse
+   the links behind the hamburger from there down instead. */
+@media (max-width:1080px){
+  .navtoggle{display:flex}
+  nav.site{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;
+    margin-left:0;gap:2px;padding-top:12px;border-top:1px solid var(--rule)}
+  header.site.navopen nav.site{display:flex}
+  nav.site a{padding:12px 14px;border-radius:12px;font-size:16px}
+  nav.site a.cta{margin-left:0;margin-top:6px;justify-content:center}
+}
+
+/* Tablets: keep the four stat cells as an even 2x2 block instead of 3+1 */
+@media (min-width:601px) and (max-width:1024px){
+  .numgrid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Phones: the stat grid drops to a single column here, so a left-aligned 62px
+   number leaves a lot of dead space to its right. Centre the section instead. */
+@media (max-width:600px){
+  /* The party averages wrap below the chamber average here, and a divider on
+     the right of a number with nothing beside it reads as a stray rule. */
+  .stat.avg .big{border-right:0;padding-right:0}
+  .numbers h2{text-align:center}
+  .numgrid .cell{text-align:center}
+  /* Two up, two down, rather than whatever order the flex row happens to wrap in. */
+  .coalition .logos{display:grid;grid-template-columns:repeat(2,1fr);justify-items:center;align-items:center}
+}
+
+@media print{
+  header.site,footer.site,#backtotop,.viewswitch,.regions,.lookup,.maptools,a.chamberswitch{display:none}
+  .panel,.panel.frozen{position:static;height:auto;max-height:none;break-inside:avoid}
+  .mapcol{height:auto}
+  #map{flex:0 0 auto;height:min(74vh,760px)}
+  .listwrap{flex:0 0 auto;max-height:none;overflow:visible}
+  a{color:#000}
+}
